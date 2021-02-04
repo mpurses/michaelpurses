@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Purses</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <meta property="og:url" content="https://michaelpurses.com">
+  <meta property="og:title" content="Michael Purses' projects">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="ocs-site-verification" content="9f2ec1e19fabd5430cb37e6cf8e87c7d" />
+  <meta name="ocs-site-verification" content="2e3fdafe01e49a0d2dad852928945070" />
+</head>
+<body>
+<header class="header">
+  <div class="col-900">
+    <div class="top">
+      <h1 class="logo">
+        <span class="title" id="title" style="font-size: large">michaelpurses.com</span>
+      </h1>
+      <!-- <a class="action mailto-telegram">Telegram</a> -->
+    </div>
+    <div class="content">
+      <span class="heading" id="heading">404</span>
+      <p class="description"></p>
+    </div>
+  </div>
+</header>
+<section class="contact">
+  <div class="col-900">
+    <div class="heading" style="font-size: 25pt !important">Return to main page</div>
+    <a class="goback">
+      <button class="action">Go back</button>
+    </a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="col-900">
+    <div class="copyright">&copy;2020 Michae Purses, Template by <a style="color: inherit;" href="https://onepagelove.com/maketheweb">MakeTheWeb</a></div>
+    <ul class="menu">
+      <li class="item"><a href="https://www.gdprprivacypolicy.net/live.php?token=dl3NxXmssEs17mkynJI4KtL6ifeJFKPq" target="_blank">Privacy</a></li>
+      <!-- <li class="item"><a href="https://" target="_blank">GitHub</a></li>
+      <li class="item"><a href="https://" target="_blank">Telegram</a></li> -->
+    </ul>
+  </div>
+</footer>
+<script>
+  const errorCode = "404";
+
+  document.getElementById("heading").textContent = errorCode;
+  document.getElementById("title").innerText = window.location.hostname;
+  document.title = errorCode + " - " + window.location.hostname;
+  document.querySelectorAll('.goback').forEach(element => {
+    element.addEventListener('click', function() {
+      window.location.href = '/';
+    });
+  });
+  document.querySelectorAll('.mailto-telegram').forEach(element => {
+    element.addEventListener('click', function() {
+      window.open('https://','_blank');
+    });
+  });
+  setTimeout(() => {
+    document.querySelector('.heading').classList.add('animate')
+  }, 500)
+</script>
+<script src="/js/vanilla-tilt.min.js"></script>
+</body>
+
+</html>

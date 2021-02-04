@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<screenplay> 
+	<config>
+		<appversion id="appversion" value="1"/>
+		<stageconfig id="stage" width="720" height="900" border="0"/>
+	</config>
+
+<!-- ****************************** STYLE (CSS) ******************************* -->
+	<style>
+	<![CDATA[
+	
+	body {font: 14px/20px 'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;}
+	a img {border:0}  
+	a {text-decoration: none;}
+  
+	#lens{background-color:#1A1A1A;}
+	#menu{width:180px; height:180px; background-color:#292929}
+	#menu a {
+	    position:absolute;
+		color: #eeeeee;
+		display: block;
+		height: 45px;
+		width:180px;		
+		text-decoration: none;
+		font-weight:bold;	
+		font-size:1.2em;		
+	}
+	#menu a.active {
+		background-color:#454545;	
+		color: #6692d4;
+	}
+	#menu a span {
+		display:block;
+		padding:12px 0 0 20px;		
+	}
+
+	#homeblurb{
+	}
+	#homeblurb span{
+		display:block;
+		position:absolute;
+		width:100%;
+		padding:54px 10px;
+		line-height:1.1em;
+		white-space:nowrap;	
+		text-align:center;
+		color:#999999;
+		font-size:2.3em;			
+	}
+	
+	#contact1,#contact2,#contact3,#contact4,#contact5,#contact6{background-color:#454545;}
+	#me1, #me2{background-color:#f1f2f0;}
+	#contact1,#contact2,#contact3,#contact4,#contact5,#contact6, #me1, #me2{
+		position:absolute;
+		width:360px; height:90px;
+	}
+	#contact span ,#me1 span, #me2 span{white-space:nowrap;
+	    position:absolute;
+		color: #EEEEEE;
+		display: block;
+		height: 75px;			
+		text-decoration: none;
+		font-weight:bold;	
+		font-size:1.4em;	
+	}	
+	#about p, #about h1, #contact5 p, #contact5 h1, #contact5 h2, #work p, #work h1{
+		padding:0 0 0 15px;
+		color: #EEEEEE;
+	}
+	#about1,#about2,#about3, #contact5, #work1, #work2, #work3, #work4, #work5 {
+	color: #EEEEEE;
+		background-color:#454545;
+		position:absolute;
+		width:360px; height:180px;
+	}	
+	
+	]]>
+	</style>	
+
+<!-- ****************************** MENU ITEMS & CONTENTS ****************************** -->
+
+	<inventory>	
+
+		<item id="logo" width="1" height="1" layer="97" top="180" left="0">
+			<payload><![CDATA[<a id='logoA' href='#logo'><img border='0' src="./images/logo.png" /></a>]]></payload>					
+			<click>
+				<action itemID="mnuHomeA" name="changeClass" className="active"/>	
+				<action name="runScene" sceneId="1"/>		
+			</click>			
+		
+		</item>	
+
+		<item id="menu" layer="99" top="180" left="180"/>
+
+		<item id="mnuHome" width="1" height="1" layer="99" top="0" left="0" parentID="menu">
+			<payload><![CDATA[<a id='mnuHomeA' href='#home'><span>Home</span></a>]]></payload>	
+			<click>
+				<action itemID="mnuHomeA" name="changeClass" className="active"/>	
+				<action name="runScene" sceneId="1"/>		
+			</click>							
+		</item>	
+
+		<item id="mnuAbout" width="1" height="1" layer="100" top="45" left="0" parentID="menu">
+			<payload><![CDATA[<a id='mnuAboutA' href='#about'><span>About</span></a>]]></payload>	
+			<click>
+				<action itemID="mnuAboutA" name="changeClass" className="active"/>	
+				<action name="runScene" sceneId="2"/>		
+			</click>							
+		</item>	
+		
+		<item id="mnuContact" width="1" height="1" layer="100" top="90" left="0" parentID="menu">
+			<payload><![CDATA[<a id='mnuContactA' href='#contact'><span>Contact</span></a>]]></payload>
+			<click>
+				<action itemID="mnuContactA" name="changeClass" className="active"/>	
+				<action name="runScene" sceneId="3"/>		
+			</click>								
+		</item>	
+
+		<item id="mnuWork" width="1" height="1" layer="100" top="135" left="0" parentID="menu">
+			<payload><![CDATA[<a id='mnuWorkA' href='#work'><span>Projects</span></a>]]></payload>	
+			<click>
+				<action itemID="mnuWorkA" name="changeClass" className="active"/>	
+				<action name="runScene" sceneId="4"/>		
+			</click>							
+		</item>			
+
+
+		<item id="head" width="1" height="1" layer="94" top="180" left="180">
+			<payload><![CDATA[<img src="./images/head_bw.png" />]]></payload>						
+		</item>	
+<!--
+		<item id="vis" width="1" height="1" layer="94" top="180" left="180">
+			<payload><![CDATA[<a href='http://vizualize.me/bjwildbore' target='_blank'><img src="scenes/images/vis.png" /></a>]]></payload>	
+			<click>				
+				<action name="openWindow" href="http://vizualize.me/bjwildbore"/>		
+			</click>									
+		</item>	
+-->
+		<item id="qr" width="1" height="1" layer="94" top="180" left="180">
+			<payload><![CDATA[<a href='http://www.michaelpurses.com/documents/resume.pdf' target='_blank'><img src="./images/resume.png" /></a>]]></payload>
+			<click>
+				<action name="openWindow" href="http://www.michaelpurses.com/documents/resume.pdf"/>		
+			</click>
+		</item>			
+		
+		<item id="homeblurb" width="1" height="1" layer="91" top="180" left="0">
+			<payload><![CDATA[<span>Multi-talented<br />Mechanical Engineer</span>]]></payload>						
+		</item>	
+		
+<!-- CONTACT -->
+		<item id="contact" width="1" height="1" layer="94" top="180" left="0"/>
+
+		<item id="contact1" width="360" height="90" layer="96" top="0" left="0" parentID="contact"/>
+
+		<item id="contact2" width="360" height="90" layer="95" top="0" left="0" parentID="contact"/>
+
+
+		<item id="contact3" width="360" height="90" layer="95" top="0" left="0" parentID="contact"/>
+
+		<item id="contact4" width="360" height="90" layer="95" top="0" left="0" parentID="contact"/>
+
+		<item id="contact5" width="360" height="180" layer="95" top="0" left="0" parentID="contact"/>
+
+		<item id="contact6" width="360" height="0" layer="96" top="90" left="0" parentID="contact"/>
+
+
+		<item id="icocontact1" width="1" height="1" layer="95" top="13" left="15" parentID="contact1">
+			<payload><![CDATA[<img src="./images/ico_email.png" />]]></payload>						
+		</item>	
+		
+		<item id="icocontact2" width="1" height="1" layer="95" top="11" left="15" parentID="contact2">
+			<payload><![CDATA[<img src="./images/ico_in.png" />]]></payload>						
+		</item>	
+
+		<item id="icocontact3" width="1" height="1" layer="95" top="9" left="15" parentID="contact3">
+			<payload><![CDATA[<img src="./images/ico_fb.png" />]]></payload>						
+		</item>
+		<item id="icocontact4" width="1" height="1" layer="95" top="6" left="15" parentID="contact4">
+			<payload><![CDATA[<img src="./images/ico_lastfm.png" />]]></payload>						
+		</item>
+		<item id="icocontact5" width="360" height="180" layer="95" top="3" left="15" parentID="contact5">
+			<payload><![CDATA[
+			<h2>Let's get in touch</h2>
+			<p>Whether you're a multi-million dollar company and would like to hire me, or just a long-lost friend who's dying to talk to me, feel free to email me at mpurses@gmail.com.</p> ]]></payload>						
+		</item>		
+		
+		<item id="acontact1" width="1" height="1" layer="95" top="35" left="105" parentID="contact1">
+			<payload><![CDATA[<a id='mnuBlogA' target='_blank' href='mailto:mpurses&#64;gmail.com'><span>mpurses&#64;gmail.com</span></a>]]></payload>	
+			<click>
+				<action name="openWindow" href="mailto:mpurses@gmail.com"/>		
+			</click>				
+		</item>	
+		
+		<item id="acontact2" width="1" height="1" layer="95" top="35" left="105" parentID="contact2">
+			<payload><![CDATA[<a id='mnuBlogA' target='_blank' href='http://www.linkedin.com/in/purses'><span>LinkedIn</span></a>]]></payload>
+			<click>
+				<action name="openWindow" href="http://www.linkedin.com/in/purses"/>		
+			</click>	
+		</item>	
+
+		<item id="acontact3" width="1" height="1" layer="95" top="35" left="105" parentID="contact3">
+			<payload><![CDATA[<a id='mnuBlogA' target='_blank' href='http://www.facebook.com/michael.purses'><span>Facebook</span></a>]]></payload>	
+			<click>
+				<action name="openWindow" href="http://www.facebook.com/michael.purses"/>		
+			</click>
+		</item>
+		<item id="acontact4" width="1" height="1" layer="95" top="35" left="105" parentID="contact4">
+			<payload><![CDATA[<a id='mnuBlogA' target='_blank' href='http://www.last.fm/user/mpurses'><span>Last.fm</span></a>]]></payload>	
+			<click>
+				<action name="openWindow" href="http://www.last.fm/user/mpurses"/>		
+			</click>
+		</item>
+		<item id="acontact5" width="1" height="1" layer="95" top="35" left="105" parentID="contact5">
+			<payload/>	
+		</item>
+
+<!-- ABOUT - UPDATE IMAGE AFTER CHANGING TEXT-->
+
+<!-- 
+					
+					
+			<h1>Who is Michael Purses?</h1>
+			<p>I am a 27 year old Missouri S&T graduate of Mechanical Engineering. Currently working at Melton Machine in Washington, MO.</p>
+			<p><b>What do you like?</b><br />
+			Design (3D modeling, product, web, branding, and just in general...), photography, music, inspiring stories, chinese buffet, Seinfeld, travel, camping, hiking, exploring, life...  
+			</p>
+			<p><b>Why Mechanical Engineering?</b><br />
+			The early years are a little fuzzy. Then came playing in the dirt, legos, boy scouts, and building random contraptions such as recliners on wheels. I tend to specialize in the ridiculous. I always liked electronics and gadgets and thats why I started in Comp Sci/ Electrical Eng. Yes I can fix your computer, and anything else for that matter. I like getting my hands dirty and thats why 
+			I got into something a little more hands on. Energy & the automotive industry interest me the most.
+			</p>
+									
+						<img src="./images/about_1.png" />
+							-->	
+		<item id="about" width="1" height="1" layer="94" top="180" left="0"/>	
+
+		<item id="about1" width="360" height="180" layer="96" top="0" left="0" parentID="about">
+		<payload><![CDATA[
+			<img src="./images/about_1.png" />
+		]]></payload>
+		</item>	
+		
+		<item id="about2" width="360" height="180" layer="95" top="0" left="0" parentID="about">
+			<payload><![CDATA[
+			<img src="./images/about_2.png" />
+			]]></payload>			
+		</item>	
+
+		<item id="about3" width="360" height="180" layer="95" top="0" left="0" parentID="about">
+			<payload><![CDATA[
+			<img src="./images/about_3.png" />
+			]]></payload>							
+		</item>
+			
+<!-- WORK -->
+		<item id="work" width="1" height="1" layer="94" top="180" left="0"/>	
+
+		<item id="work1" width="360" height="180" layer="96" top="0" left="0" parentID="work">		
+			<payload><![CDATA[
+			<a href='http://www.michaelpurses.com/jacks_moto_rocker/'><img src="./images/moto-rocker.jpg" /></a>
+			]]></payload>				
+			<click>
+				<action name="openWindow" href="http://www.michaelpurses.com/jacks_moto_rocker/"/>		
+			</click>
+		</item>	
+		
+		<item id="work2" width="360" height="180" layer="95" top="0" left="0" parentID="work">		
+			<payload><![CDATA[
+			<a href='http://www.michaelpurses.com/anniversary_hearts/'><img src="./images/heart.jpg" /></a>
+			]]></payload>				
+			<click>
+				<action name="openWindow" href="http://www.michaelpurses.com/anniversary_hearts/"/>		
+			</click>
+		</item>	
+
+		<item id="work3" width="360" height="180" layer="95" top="0" left="0" parentID="work">
+			<payload><![CDATA[
+			<a href='http://www.michaelpurses.com/xl250/'><img src="./images/bike.png" /></a>
+			]]></payload>				
+			<click>
+				<action name="openWindow" href="http://www.michaelpurses.com/xl250/"/>		
+			</click>
+		</item>	
+		
+		<item id="work4" width="360" height="180" layer="95" top="0" left="0" parentID="work">
+			<payload><![CDATA[
+			<a href='http://www.michaelpurses.com/hho/'><img src="./images/hho.png" /></a>
+			]]></payload>
+			<click>
+				<action name="openWindow" href="http://www.michaelpurses.com/hho/"/>		
+			</click>			
+		</item>	
+		
+		<item id="work5" width="360" height="180" layer="95" top="0" left="0" parentID="work">
+			<payload><![CDATA[
+			<a href='http://www.michaelpurses.com/web_design'><img src="./images/web_design.png" /></a>
+			]]></payload>
+			<click>
+				<action name="openWindow" href="http://www.michaelpurses.com/web_design/"/>		
+			</click>			
+		</item>
+<!-- Not Used.....................................................................................
+
+		<item id="me1" width="360" height="90" layer="96" top="180" left="0"/>
+		
+		<item id="me2" width="360" height="90" layer="95" top="180" left="0"/>
+
+
+
+		<item id="ame1" width="1" height="1" layer="95" top="35" left="105" parentID="me1">
+			<payload><![CDATA[<a id='mnuBlogA' target='_blank' href='http://www.bjw.co.nz/cv.pdf'><span>Curriculum vitae</span></a>]]></payload>	
+			<click>
+				<action name="openWindow" href="http://www.bjw.co.nz/cv.pdf"/>		
+			</click>
+		</item>
+		<item id="ame2" width="1" height="1" layer="95" top="35" left="105" parentID="me2">
+			<payload><![CDATA[<a id='mnuBlogA' target='_blank' href='http://vizualize.me/bjwildbore'><span>vizualize.me</span></a>]]></payload>	
+			<click>
+				<action name="openWindow" href="http://vizualize.me/bjwildbore"/>		
+			</click>
+		</item>	
+
+		<item id="icome1" width="1" height="1" layer="95" top="10" left="10" parentID="me1">
+			<payload><![CDATA[<img src="scenes/images/ico_pdf.png" />]]></payload>						
+		</item>
+		<item id="icome1" width="1" height="1" layer="95" top="5" left="10" parentID="me2">
+			<payload><![CDATA[<img src="scenes/images/ico_vis.png" />]]></payload>						
+		</item>	
+............................................................................................... -->
+
+
+<!-- ***************************************** JAVASCRIPT/EFFECTS ****************************************** -->
+	</inventory>
+
+		<!-- actions show effects: blind bounce clip fold highlight puff pulsate scale shake slide  -->
+		<!-- actions hide effects: blind bounce clip  explode fold highlight puff pulsate scale shake slide  -->
+		
+<!-- HOME -->
+	<scenes>	
+		<scene id="1" title="dashboard"> 			
+			<init>			
+				<action itemID="mnuHomeA" name="changeClass" className="active"/>
+				<action itemID="homeblurb" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;,&quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>						
+			</init>
+			
+			<exit timeframe="0">
+				<action itemID="homeblurb" name="alterProperties" details="{&quot;left&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>	
+				<action itemID="mnuHomeA" name="changeClass" className=""/>	
+			</exit>
+		
+		</scene>  
+		
+<!-- ABOUT -->
+		<scene id="2" title="about"> 			
+			<init>					 				  
+				  <action itemID="mnuAboutA" name="changeClass" className="active"/>
+				  <action itemID="head" name="alterProperties" details="{&quot;left&quot;:&quot;180px&quot;,&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="3000" easing="easeInOutQuart"/>
+<!--				  	
+				  <action itemID='me1' name='alterProperties' details='{"left":"0px","top":"360px"}' animate="1" duration='3000' easing="easeInOutQuart" />
+				  <action itemID='me2' name='alterProperties' details='{"left":"0px","top":"450px"}' animate="1" duration='3000' easing="easeInOutQuart" />
+				   
+-->				 <action itemID="about" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				 <action itemID="about" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>								  
+				  
+				  <action name="wait" delay="400">					  
+					  <action itemID="about2" name="alterProperties" details="{&quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>					 
+					  <action itemID="about3" name="alterProperties" details="{&quot;top&quot;:&quot;360px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>					 
+				  </action>	
+				  			  	
+			</init>			
+
+			<exit timeframe="400">
+				  <action itemID="head" name="alterProperties" details="{&quot;left&quot;:&quot;180px&quot;,&quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="mnuAboutA" name="changeClass" className=""/>
+				  <action itemID="me1" name="alterProperties" details="{&quot;left&quot;:&quot;0px&quot;,&quot;top&quot;:&quot;180px&quot;}" animate="1" duration="3000" easing="easeInOutQuart"/>
+				  <action itemID="me2" name="alterProperties" details="{&quot;left&quot;:&quot;0px&quot;,&quot;top&quot;:&quot;270px&quot;}" animate="1" duration="3000" easing="easeInOutQuart"/>
+				  
+				  <action itemID="about" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="about2" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="about3" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="about" name="alterProperties" details="{&quot;left&quot;:&quot;0px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>					  
+				  
+			</exit>
+
+		</scene> 
+
+<!-- CONTACT -->
+		<scene id="3" title="contact"> 			
+			<init>			
+
+				  <action itemID="mnuContactA" name="changeClass" className="active"/>	
+								  
+				  <action itemID="homeblurb" name="alterProperties" details="{&quot;left&quot;:&quot;0&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>				  	
+				  <action itemID="qr" name="alterProperties" details="{&quot;left&quot;:&quot;180px&quot;,&quot;top&quot;:&quot;360px&quot;}" animate="1" duration="3000" easing="easeInOutQuart"/>	
+				  
+				  <action name="wait" delay="400">
+					  <action itemID="contact2" name="alterProperties" details="{&quot;top&quot;:&quot;90px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+					  <action itemID="contact3" name="alterProperties" details="{&quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+					  <action itemID="contact4" name="alterProperties" details="{&quot;top&quot;:&quot;270px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+					  <action itemID="contact5" name="alterProperties" details="{&quot;top&quot;:&quot;360px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+					  <action itemID="contact6" name="alterProperties" details="{&quot;top&quot;:&quot;450px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/> 
+				  </action>	 
+
+				  
+				  
+			</init>	
+			
+			<exit timeframe="400">
+				  <action itemID="mnuContactA" name="changeClass" className=""/>
+				  <action itemID="contact" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact2" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact3" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact4" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact5" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="contact6" name="alterProperties" details="{&quot;top&quot;:&quot;90px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>	
+				  <action itemID="contact" name="alterProperties" details="{&quot;left&quot;:&quot;0px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>	
+				  <action itemID="qr" name="alterProperties" details="{&quot;left&quot;:&quot;180px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>	
+			</exit>		
+
+		</scene> 
+
+<!-- WORK -->
+		<scene id="4" title="work"> 			
+			<init>					 				  
+				  <action itemID="mnuWorkA" name="changeClass" className="active"/>
+				 <action itemID="work" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				 <action itemID="work" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>					 
+				  
+				  <action name="wait" delay="400">					  
+					  <action itemID="work2" name="alterProperties" details="{&quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>					 
+					  <action itemID="work3" name="alterProperties" details="{&quot;top&quot;:&quot;360px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+					  <action itemID="work4" name="alterProperties" details="{&quot;top&quot;:&quot;540px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>	
+					  <action itemID="work5" name="alterProperties" details="{&quot;top&quot;:&quot;720px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>						  
+				  </action>	
+				  			  	
+			</init>			
+
+			<exit timeframe="400">
+				  <action itemID="mnuWorkA" name="changeClass" className=""/>
+				  <action itemID="work" name="alterProperties" details="{&quot;left&quot;:&quot;360px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="work2" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="work3" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="work4" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="work5" name="alterProperties" details="{&quot;top&quot;:&quot;0px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>
+				  <action itemID="work" name="alterProperties" details="{&quot;left&quot;:&quot;0px&quot;, &quot;top&quot;:&quot;180px&quot;}" animate="1" duration="1000" easing="easeInOutQuart"/>					  
+				  
+			</exit>
+		
+		</scene> 
+		
+	</scenes>
+</screenplay>

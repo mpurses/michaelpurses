@@ -1,0 +1,57 @@
+body{background-color:#1a1a1a;}
+a img { border:0 } 
+#inv_text {
+  position:absolute;
+  color:rgb(26,26,26);
+}
+#app{
+}
+
+#stageControls{
+}
+
+#stage{	
+	margin-top:50px;
+	position:relative;
+}
+
+#scene{
+	margin: 50px auto;
+	background-color:#f1f2f0;	
+	position:relative;
+}
+
+
+#lens{position:absolute;overflow:hidden;z-index:100 }
+#caption{position:absolute;}
+
+
+.outer{
+	margin: 50px auto;
+		
+	position:relative;
+}
+
+@font-face {
+  font-family: 'Sansation Regular';
+  src: url('Sansation_Regular.eot');
+  src: url('Sansation_Regular.eot?#iefix') format('embedded-opentype') ;
+  src: local('☺'),
+          url('Sansation_Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Sansation Light';
+  src: url('Sansation_Light.eot');
+  src: url('Sansation_Light.eot?#iefix') format('embedded-opentype') ;
+  src: local('☺'),
+          url('Sansation_Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Sansation Bold';
+  src: url('Sansation_Bold.eot');
+  src: url('Sansation_Bold.eot?#iefix') format('embedded-opentype') ;
+  src: local('☺'),
+          url('Sansation_Bold.ttf') format('truetype');
+}
