@@ -762,6 +762,22 @@ footer ul {
   color: #00a7e1;
 }
 
+.footer2 p{
+  max-width: 610px;
+  margin: 20px auto;
+}
+.footer2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  /*font-family: "Courier New";*/
+}
+
+.footer2 a {
+  color: #699B73;
+}
+
+
 @media (max-width: 550px) {
     .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5  {
     width: 65%;
