@@ -24,13 +24,21 @@ html {
   background: #333333;
   padding: 10px 50px 50px;
 }
-
+@media (max-width: 412px) {
+  .container {
+    padding: 10px 25px 25px;
+  }
+}
 h1 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 50px;
 }
-
+@media (max-width: 412px) {
+  h1 {
+    font-size:28px;
+  }
+}
 h2 {
   color: #ffffff;
 }
@@ -90,6 +98,13 @@ label small {
   }
 }
 @media (max-width: 475px) {
+  .group_half {
+    position: relative;
+    margin-bottom: 45px;
+    width: 85%;
+  }
+}
+@media (max-width: 412px) {
   .group_half {
     position: relative;
     margin-bottom: 45px;
@@ -633,6 +648,15 @@ input:focus ~ .highlight_half {
     width: 40%;
   }
 }
+@media (max-width: 412px) {
+  .form__answer_3 {
+    height: 125px;
+  }
+
+  .form__answer {
+    width: 48%;
+  }
+}
 .form__half {
   display: inline-block;
   box-sizing: border-box;
@@ -774,4 +798,42 @@ footer ul {
   .form__answer_3 {
     width: 31%;
   }
+}
+
+@media (max-width: 400px) {
+  .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5  {
+  width: 64.5%;
+}
+
+.form-select-time {
+  width: 16%;
+}
+
+.form-select-calories {
+  width: 16%;
+}
+
+.form-select-title .col1 {
+  width: 65%;
+}
+
+.form-select-title .col2 {
+  width: 16%;
+}
+
+.form-select-title .col3 {
+  width: 16%;
+}
+
+.group_formula_3 label {
+  width: 30.7%;
+}
+
+.group_formula_3perc label {
+  width: 30.7%;
+}
+
+.form__answer_3 {
+  width: 30.7%;
+}
 }
