@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900");
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased
 }
 
 /* Font from Google fonts */
@@ -72,6 +73,7 @@ label small {
 .group {
   position: relative;
   margin-bottom: 45px;
+  background: #333333 !important;
 }
 
 .group_half {
@@ -127,7 +129,7 @@ input {
   display: block;
   width: 240px;
   border: none;
-  background: #333333;
+  background: #333333 !important;
   color: #ffffff;
   border-bottom: 1px solid #757575;
 }
@@ -138,7 +140,7 @@ input {
   display: block;
   width: 100%;
   border: none;
-  background: #333333;
+  background: #333333 !important;
   color: #ffffff;
   text-align: center;
 }
@@ -149,7 +151,7 @@ input {
   display: inline-block;
   width: 100%;
   border: none;
-  background: #333333;
+  background: #333333 !important;
   color: #ffffff;
   text-align: center;
 }
@@ -160,7 +162,7 @@ input {
   display: inline-block;
   width: 100%;
   border: none;
-  background: #333333;
+  background: #333333 !important;
   color: #ffffff;
   text-align: center;
 }
@@ -171,7 +173,7 @@ input {
   display: inline-block;
   width: 100%;
   border: none;
-  background: #333333;
+  background: #333333 !important;
   color: #ffffff;
   text-align: center;
 }
@@ -182,7 +184,7 @@ input {
   display: block;
   width: 100px;
   border: none;
-  background: #333333;
+  background: #333333 !important;
   color: #ffffff;
   border-bottom: 1px solid #757575;
 }
@@ -682,6 +684,21 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /*border: 1px solid green;*/
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #333 inset;
+  /*transition: background-color 5000s ease-in-out 0s;*/
 }
 
 /* Firefox */

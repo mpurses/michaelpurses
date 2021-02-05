@@ -193,9 +193,9 @@ function changeBMR() {
 			// BMR if Body Fat % is known
 			$BMR.val((370 + (21.6 * (1 - BF / 100) * lbs) / 2.205).toFixed(0));
 		}
-		
+
 	}
-	if ($BMR.val() < 0) {
+	if ($BMR.val() < 900) {
 		$BMR.val(0);
 	}
 	changeTDEE();
@@ -236,32 +236,49 @@ function changeTotalCalories() {
 	var Goal = parseFloat($Goal);
 	var lbs = parseInt($lbs.val());
 	var CalTotal = parseInt($CalTotal.val());
+	var Proteing = parseInt($Proteing.val());
+	var Carbsg = parseInt($Carbsg.val());
+	var Fatg = parseInt($Fatg.val());
 
 	$TotalCalories.val((TDEE * Goal).toFixed(0));
 	var TotalCalories = parseInt($TotalCalories.val());
-	//Protein
-	if (Goal == 0.8) {
-		$Proteing.val(((lbs / 2.205) * 2.2).toFixed(0) + "g");
+
+
+	if (isNaN(lbs)) {
+		Proteing = 0;
+		Carbsg = 0;
+		Fatg = 0;
 	} else {
-		$Proteing.val(((lbs / 2.205) * 1.8).toFixed(0) + "g");
+		//Protein
+		if (Goal == 0.8) {
+			$Proteing.val(((lbs / 2.205) * 2.2).toFixed(0) + "g");
+			Proteing = ((lbs / 2.205) * 2.2);
+		} else {
+			$Proteing.val(((lbs / 2.205) * 1.8).toFixed(0) + "g");
+			Proteing = ((lbs / 2.205) * 1.8);
+		}
+		//Carbs
+		$Carbsg.val(
+			((lbs / 2.205) * 3 + CalTotal / 4 + (TotalCalories - TDEE) / 4).toFixed(0) +
+			"g"
+		);
+		Carbsg = ((lbs / 2.205) * 3 + CalTotal / 4 + (TotalCalories - TDEE) / 4);
+		//Fat
+		$Fatg.val(((TotalCalories - Proteing * 4 - Carbsg * 4) / 9).toFixed(0) + "g");
+		Fatg = ((TotalCalories - Proteing * 4 - Carbsg * 4) / 9);
+		if (Fatg < 0) {
+			$Fatg.val(0);
+			Fatg = parseInt($Fatg.val());
+		}
+		$Fatperc.val((((Fatg * 9) / TotalCalories) * 100).toFixed(0) + "%");
+		$Carbsperc.val((((Carbsg * 4) / TotalCalories) * 100).toFixed(0) + "%");
+		$Proteinperc.val((((Proteing * 4) / TotalCalories) * 100).toFixed(0) + "%");
 	}
-	var Proteing = parseInt($Proteing.val());
-	//Carbs
-	$Carbsg.val(
-		((lbs / 2.205) * 3 + CalTotal / 4 + (TotalCalories - TDEE) / 4).toFixed(0) +
-		"g"
-	);
-	var Carbsg = parseInt($Carbsg.val());
-	//Fat
-	$Fatg.val(((TotalCalories - Proteing * 4 - Carbsg * 4) / 9).toFixed(0) + "g");
-	var Fatg = parseInt($Fatg.val());
-	if (Fatg < 0) {
-		$Fatg.val(0);
-		Fatg = parseInt($Fatg.val());
-	}
-	$Fatperc.val((((Fatg * 9) / TotalCalories) * 100).toFixed(0) + "%");
-	$Carbsperc.val((((Carbsg * 4) / TotalCalories) * 100).toFixed(0) + "%");
-	$Proteinperc.val((((Proteing * 4) / TotalCalories) * 100).toFixed(0) + "%");
+
+
+
+
+
 }
 
 $Age.on("input", changeBMR);
