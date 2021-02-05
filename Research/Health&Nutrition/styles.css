@@ -1,0 +1,760 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900");
+* {
+  box-sizing: border-box;
+}
+
+/* Font from Google fonts */
+/* Color palette */
+/* basic stylings ------------------------------------------ */
+body,
+html {
+  height: 100%;
+  background: #222222;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+  font-family: "Roboto";
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto 0;
+  display: block;
+  background: #333333;
+  padding: 10px 50px 50px;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+h3 {
+  text-align: center;
+  color: #ffffff;
+}
+
+h3 small {
+  font-weight: normal;
+  color: #888;
+  display: block;
+  font-size: 15px;
+}
+
+h1 small {
+  font-weight: normal;
+  color: #888;
+  display: block;
+  font-size: 15px;
+}
+
+label small {
+  font-size: 12px;
+}
+
+.footer {
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Courier New";
+}
+
+.footer a {
+  color: #53b2c8;
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.group_half {
+  position: relative;
+  margin-bottom: 45px;
+  width: 50%;
+}
+
+@media (max-width: 550px) {
+  .group_half {
+    position: relative;
+    margin-bottom: 45px;
+    width: 75%;
+  }
+}
+@media (max-width: 475px) {
+  .group_half {
+    position: relative;
+    margin-bottom: 45px;
+    width: 85%;
+  }
+}
+.group_radio {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.group_formula {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.group_formula_3 {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 70px;
+}
+
+.group_formula_3perc {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: -20px;
+}
+
+.form-select-calories {
+  margin-bottom: 0px;
+}
+
+/* INPUT FORM TEXT */
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 240px;
+  border: none;
+  background: #333333;
+  color: #ffffff;
+  border-bottom: 1px solid #757575;
+}
+
+.group_formula input {
+  font-size: 28px;
+  padding: 5px 5px 5px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+}
+
+.group_formula_3 input {
+  font-size: 26px;
+  padding: 0px 0px 0px 0px;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+}
+
+.group_formula_3perc input {
+  font-size: 16px;
+  padding: 0px 0px 0px 0px;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+}
+
+.form-select-calories input {
+  font-size: 14px;
+  padding: 0px 0px 0px 0px;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+}
+
+.form__half input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100px;
+  border: none;
+  background: #333333;
+  color: #ffffff;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+.form-select-title {
+  color: #999;
+  padding-bottom: 5px;
+}
+
+.form-select-total {
+  color: #999;
+  padding-bottom: 5px;
+  display: block;
+  float: right;
+  text-align: right;
+  width: 100%;
+}
+
+.form-select-title .col1 {
+  float: left;
+  width: 74%;
+}
+
+.form-select-title .col2 {
+  float: left;
+  width: 13%;
+}
+
+.form-select-title .col3 {
+  float: left;
+  width: 13%;
+}
+
+.form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5 {
+  color: #999;
+  padding: 5px 5px 5px 5px;
+  font-size: 14px;
+  background: #333333;
+  width: 72%;
+  margin-bottom: 10px;
+}
+
+.form-select-time {
+  color: #999;
+  padding: 5px 5px 5px 5px;
+  font-size: 14px;
+  background: #333333;
+  width: 13%;
+}
+
+.form-select-calories {
+  color: #999;
+  font-size: 14px;
+  background: #333333;
+  width: 13%;
+}
+
+.Macros {
+  margin-top: -30px;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+}
+
+.Macros .col1 {
+  float: left;
+  width: 33.33%;
+}
+
+.Macros .col2 {
+  float: left;
+  width: 33.33%;
+}
+
+.Macros .col3 {
+  float: left;
+  width: 33.33%;
+}
+
+.group_formula_3 .col1 {
+  float: left;
+}
+
+.group_formula_3 .col2 {
+  float: left;
+}
+
+.group_formula_3 .col3 {
+  float: left;
+}
+
+.group_formula_3perc .col1 {
+  float: left;
+}
+
+.group_formula_3perc .col2 {
+  float: left;
+}
+
+.group_formula_3perc .col3 {
+  float: left;
+}
+
+.group label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.group_half label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.group_radio label {
+  border: 1px solid rgba(250, 250, 250, 0.15);
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 30px 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+}
+.group_radio label:hover, .group_radio label:focus, .group_radio label:active {
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.group_formula label {
+  border: 1px solid rgba(250, 250, 250, 0.15);
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.group_formula label:hover, .group_formula label:focus, .group_formula label:active {
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.group_formula_3 label {
+  border: 1px solid rgba(250, 250, 250, 0.15);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 100%;
+  width: 31.5%;
+  padding: 10px 10px 10px 10px;
+  margin: 2px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.group_formula_3 label:hover, .group_formula_3 label:focus, .group_formula_3 label:active {
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.group_formula_3perc label {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 100%;
+  width: 31.5%;
+  padding: 10px 10px 10px 10px;
+  margin: 2px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+label.form-select-calories {
+  border: 1px solid rgba(250, 250, 250, 0.15);
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 6px 0px 5px 0px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+label.form-select-calories:hover, label.form-select-calories:focus, label.form-select-calories:active {
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.form-select-total .form-select-calories {
+  border: 1px solid rgba(250, 250, 250, 0.35);
+  margin-right: 0.5%;
+}
+
+/* LABEL - active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #637a96;
+}
+
+.group_radio input:focus ~ label,
+.group_radio input:valid ~ label {
+  top: -20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.group_formula input:focus ~ label,
+.group_formula input:valid ~ label {
+  top: -20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.group_formula_3 input:focus ~ label,
+.group_formula_3 input:valid ~ label {
+  top: -20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.group_formula_3perc input:focus ~ label,
+.group_formula_3perc input:valid ~ label {
+  top: -20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.form-select-calories input:focus ~ label,
+.form-select-calories input:valid ~ label {
+  top: 0px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 240px;
+}
+
+.bar_half {
+  position: relative;
+  display: block;
+  width: 100px;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #637a96;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar_half:before,
+.bar_half:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #637a96;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar_half:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+.bar_half:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+input:focus ~ .bar_half:before,
+input:focus ~ .bar_half:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.highlight_half {
+  position: absolute;
+  height: 60%;
+  width: 50px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+input:focus ~ .highlight_half {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #637a96;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #637a96;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #637a96;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/**************** RADIO BUTTON Form Styles ******************/
+.form {
+  max-width: 610px;
+  margin: 60px auto;
+}
+
+.form__header {
+  margin-bottom: 40px;
+  border-bottom: 1px dashed rgba(250, 250, 250, 0.15);
+}
+
+.form__title {
+  font-size: 45px;
+  margin: 10px 0;
+}
+
+.form__instruction {
+  font-size: 22px;
+}
+
+.form__options {
+  border: none;
+  padding: 0;
+}
+
+.form__question {
+  font-size: 25px;
+}
+
+.form__answer {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 23%;
+  margin: 0px 1% 0px 0;
+  height: 40px;
+  vertical-align: top;
+  font-size: 22px;
+  text-align: center;
+}
+
+.form__answer_3 {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 31.5%;
+  margin: 0px 1% 0px 0;
+  height: 75px;
+  vertical-align: top;
+  font-size: 22px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .form__answer_3 {
+    height: 100px;
+  }
+
+  .form__answer {
+    width: 30%;
+  }
+}
+@media (max-width: 475px) {
+  .form__answer_3 {
+    height: 125px;
+  }
+
+  .form__answer {
+    width: 40%;
+  }
+}
+.form__half {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 20%;
+  margin: 0px 29% 0px 0;
+  height: 40px;
+  vertical-align: top;
+  font-size: 22px;
+}
+
+.form__button {
+  height: 40px;
+  border: none;
+  background-color: #00703f;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 40px 0;
+  transition: all 0.25s ease-in-out;
+}
+.form__button:hover, .form__button:focus {
+  background-color: #00824a;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+/* Input style */
+input[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type=radio]:active ~ label {
+  opacity: 1;
+}
+
+input[type=radio]:checked ~ label {
+  opacity: 1;
+  border: 1px solid #fafafa;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #003459;
+  position: relative;
+  padding: 20px;
+}
+footer h2,
+footer h3,
+footer p,
+footer ul {
+  max-width: 610px;
+  margin: 20px auto;
+}
+
+.footer__title {
+  font-size: 30px;
+  margin-top: 40px;
+  color: #00171f;
+}
+
+.footer__subtitle {
+  font-size: 22px;
+}
+
+.footer__parragraph, .footer__list {
+  line-height: 1.5em;
+  font-size: 22px;
+}
+.footer__parragraph a, .footer__list a {
+  color: #00a7e1;
+}
+
+@media (max-width: 550px) {
+    .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5  {
+    width: 65%;
+  }
+
+  .form-select-time {
+    width: 16%;
+  }
+
+  .form-select-calories {
+    width: 16%;
+  }
+
+  .form-select-title .col1 {
+    width: 65%;
+  }
+
+  .form-select-title .col2 {
+    width: 16%;
+  }
+
+  .form-select-title .col3 {
+    width: 16%;
+  }
+
+  .group_formula_3 label {
+    width: 31%;
+  }
+
+  .group_formula_3perc label {
+    width: 31%;
+  }
+
+  .form__answer_3 {
+    width: 31%;
+  }
+}

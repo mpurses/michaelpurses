@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+
+	<title>Nutritional Guideline Calculator</title>
+
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+	<link rel='stylesheet' href='styles.css'>
+	<!-- Select Option Searching JS/CSS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+	<link href="select2.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</head>
+
+<body translate="no">
+
+	<div class="container">
+
+		<h1>Nutritional Guideline Calculator<small>Determine your Metabolic Rate, Total Daily Energy Expenditure, and
+				total recommended calories and macronutrients...</small></h1>
+
+		<form>
+			<!-- Info - Basal Metabolic Rate -->
+			<h2>Your Info</h2>
+			<div class="group_radio">
+				<p class="form__answer">
+					<input type="radio" name="SexRadio" id="match_1" value="5" onclick="sexRadio(this.value)" checked>
+					<label for="match_1">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="Male" stroke="#FFFFFF" stroke-width="2">
+							</g>
+						</g>
+						</svg>
+						Male
+					</label>
+				</p>
+				<p class="form__answer">
+					<input type="radio" name="SexRadio" id="match_2" value="-161" onclick="sexRadio(this.value)">
+					<label for="match_2">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="Female" stroke="#FFFFFF" stroke-width="2">
+							</g>
+						</g>
+						</svg>
+						Female
+					</label>
+				</p>
+			</div>
+
+			<p class="input">
+			<div class="group">
+				<input type="number" id="age" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Age</label>
+			</div>
+			</p>
+
+			<div class="group_half">
+				<p class="form__half">
+					<input type="number" id="ft" required>
+					<span class="highlight_half"></span>
+					<span class="bar_half"></span>
+					<label>ft</label>
+				</p>
+				<p class="form__half">
+					<input type="number" id="in" required>
+					<span class="highlight_half"></span>
+					<span class="bar_half"></span>
+					<label>in</label>
+				</p>
+			</div>
+
+			<p class="input">
+			<div class="group">
+				<input type="number" id="lbs" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Weight (lbs)</label>
+			</div>
+			</p>
+
+			<p class="input">
+			<div class="group">
+				<input type="number" id="bf" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Body Fat % <small>(leave blank if unknown)</small></label>
+			</div>
+			</p>
+			<h3>Basal Metabolic Rate<small>Calculated via <i>Katch-McArdle eq.</i> (if BF% known) or <i>Mifflin-St Jeor
+						eq.</i> (if BF% unknown)</small></h3>
+
+			<div class="group_formula">
+				<label>
+					<input type="number" id="BMR" readonly>
+				</label>
+			</div>
+			<!-- Exercise - Total Daily Energy Expenditure -->
+			<h2>Exercise</h2>
+			<div class="form-select-title">
+				<label class="col1">Daily Activities</label>
+				<label class="col2">Time</label>
+				<label class="col3">Calories</label>
+			</div>
+			<!-- ROW 1 -->
+			<select class="form-select-activities1" id="activities1">
+				<option value="0" selected hidden>
+					Select an Exercise...
+				</option>
+			</select>
+			<select class="form-select-time" id="time1">
+				<option value="0">0</option>
+				<option value="15">15 min</option>
+				<option value="30">30 min</option>
+				<option value="45">45 min</option>
+				<option value="60">1 hr</option>
+				<option value="90">1.5 hr</option>
+				<option value="120">2 hr</option>
+			</select>
+			<label class="form-select-calories">
+				<input type="number" id="Cal1" readonly>
+			</label>
+
+			<!-- ROW 2 -->
+			<select class="form-select-activities2" id="activities2">
+				<option value="0" selected hidden>
+					Select an Exercise...
+				</option>
+			</select>
+			<select class="form-select-time" id="time2">
+				<option value="0">0</option>
+				<option value="15">15 min</option>
+				<option value="30">30 min</option>
+				<option value="45">45 min</option>
+				<option value="60">1 hr</option>
+				<option value="90">1.5 hr</option>
+				<option value="120">2 hr</option>
+			</select>
+			<label class="form-select-calories">
+				<input type="number" id="Cal2" readonly>
+			</label>
+
+			<!-- ROW 3 -->
+			<select class="form-select-activities3" id="activities3">
+				<option value="0" selected hidden>
+					Select an Exercise...
+				</option>
+			</select>
+			<select class="form-select-time" id="time3">
+				<option value="0">0</option>
+				<option value="15">15 min</option>
+				<option value="30">30 min</option>
+				<option value="45">45 min</option>
+				<option value="60">1 hr</option>
+				<option value="90">1.5 hr</option>
+				<option value="120">2 hr</option>
+			</select>
+			<label class="form-select-calories">
+				<input type="number" id="Cal3" readonly>
+			</label>
+
+			<!-- ROW 4 -->
+			<select class="form-select-activities4" id="activities4">
+				<option value="0" selected hidden>
+					Select an Exercise...
+				</option>
+			</select>
+			<select class="form-select-time" id="time4">
+				<option value="0">0</option>
+				<option value="15">15 min</option>
+				<option value="30">30 min</option>
+				<option value="45">45 min</option>
+				<option value="60">1 hr</option>
+				<option value="90">1.5 hr</option>
+				<option value="120">2 hr</option>
+			</select>
+			<label class="form-select-calories">
+				<input type="number" id="Cal4" readonly>
+			</label>
+
+			<!-- ROW 5 -->
+			<select class="form-select-activities5" id="activities5">
+				<option value="0" selected hidden>
+					Select an Exercise...
+				</option>
+			</select>
+			<select class="form-select-time" id="time5">
+				<option value="0">0</option>
+				<option value="15">15 min</option>
+				<option value="30">30 min</option>
+				<option value="45">45 min</option>
+				<option value="60">1 hr</option>
+				<option value="90">1.5 hr</option>
+				<option value="120">2 hr</option>
+			</select>
+			<label class="form-select-calories">
+				<input type="number" id="Cal5" readonly>
+			</label>
+
+			<div class="form-select-total">
+				<label class="col1">Total Calories Burned</label>
+				<label class="form-select-calories">
+					<input type="number" id="CalTotal" readonly>
+				</label>
+			</div>
+
+			<h3>Total Daily Energy Expenditure<small>Calories needed to maintain weight</small></h3>
+
+			<div class="group_formula">
+				<label>
+					<input type="number" id="TDEE" readonly>
+				</label>
+			</div>
+
+			<!-- GOALS - TOTAL CALORIE INFO -->
+			<h2>Goals</h2>
+			<div class="group_radio">
+				<p class="form__answer_3">
+					<input type="radio" name="GoalRadio" id="match_lose" value="0.8" onclick="goalRadio(this.value)">
+					<label for="match_lose">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="Lose" stroke="#FFFFFF" stroke-width="2">
+							</g>
+						</g>
+						</svg>
+						Lose Weight (Lose Fat / Maintain Muscle)
+					</label>
+				</p>
+				<p class="form__answer_3">
+					<input type="radio" name="GoalRadio" id="match_main" value="1" onclick="goalRadio(this.value)"
+						checked>
+					<label for="match_main">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="Maintain" stroke="#FFFFFF" stroke-width="2">
+							</g>
+						</g>
+						</svg>
+						Maintain Weight (Lose Fat / Gain Muscle)
+					</label>
+				</p>
+				<p class="form__answer_3">
+					<input type="radio" name="GoalRadio" id="match_gain" value="1.1" onclick="goalRadio(this.value)">
+					<label for="match_gain">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="Gain" stroke="#FFFFFF" stroke-width="2">
+							</g>
+						</g>
+						</svg>
+						Gain Weight (Muscle)
+					</label>
+				</p>
+			</div>
+
+			<h3>Total Calories</h3>
+
+			<div class="group_formula">
+				<label>
+					<input type="number" id="TotalCalories" readonly>
+				</label>
+			</div>
+
+			<div class="Macros">
+				<label class="col1">Fat</label>
+				<label class="col2">Carbs</label>
+				<label class="col3">Protein</label>
+			</div>
+			<div class="group_formula_3">
+				<label>
+					<input type="text" id="Fatg" class="col1" readonly>
+				</label>
+				<label>
+					<input type="text" id="Carbsg" class="col2" readonly>
+				</label>
+				<label>
+					<input type="text" id="Proteing" class="col3" readonly>
+				</label>
+			</div>
+
+			<div class="group_formula_3perc">
+				<label>
+					<input type="text" id="Fatperc" class="col1" readonly>
+				</label>
+				<label>
+					<input type="text" id="Carbsperc" class="col2" readonly>
+				</label>
+				<label>
+					<input type="text" id="Proteinperc" class="col3" readonly>
+				</label>
+			</div>
+
+		</form>
+
+		<p class="footer">
+			<br />
+			<b><u>Equations</u></b><br />
+			Mifflin-St Jeor Equation:<br />
+			For men:<br />
+			BMR = 10W + 6.25H - 5A + 5<br />
+			For women:<br />
+			BMR = 10W + 6.25H - 5A - 161<br />
+			<br />
+			Katch-McArdle Formula:<br />
+			BMR = 370 + 21.6(1 - F)W<br />
+			<br />
+			W = body weight in kg<br />
+			H = body height in cm<br />
+			A = age<br />
+			F = body fat in percentage<br />
+			<br />
+			Calories burned = (MET*3.5*weight in kg/200)*time<br />
+			1 MET = resting oxygen cost level = 3.5 milliliters of oxygen per kilogram body weight per minute <br />
+			<br />
+			TDEE = BMR*1.15 + calories burned <br />
+			<br />
+			In order to lose weight, decrease your calorie intake by a deficit of 20%. Lower your carb intake. Keep your
+			fat intake lower but constant. Increase your protein intake(to about 1g/pound) to promote fat loss.</br>
+			</br>
+			In order to maintain weight, increase your Carb intake as you exercise more. Keep your fat and protein
+			intake constant. If you're wanting to lose more fat, increase protein intake or decrease Carb intake
+			slightly.</br>
+			</br>
+			In order to gain weight, increase your Carb or Protein intake as you exercise more by a surplus of at least
+			10%. Keep your fat intake constant.</br>
+			</br>
+			<a
+				href="https://docs.google.com/spreadsheets/d/1QC1wJXP-KXqbifYsFD-qof6RFJufP7J6AMklE4LvF80/edit#gid=1416142452">Studies
+				& Sources</a>
+		</p>
+	</div>
+
+	<script id="rendered-js" src='scripts.js'></script>
+
+</body>
+
+</html>
