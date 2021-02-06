@@ -6,10 +6,12 @@
 }
 
 /* Font from Google fonts */
+
 /* Color palette */
+
 /* basic stylings ------------------------------------------ */
-body,
-html {
+
+body, html {
   height: 100%;
   background: #222222;
   font-family: "Source Sans Pro", sans-serif;
@@ -24,21 +26,25 @@ html {
   background: #333333;
   padding: 10px 50px 50px;
 }
+
 @media (max-width: 412px) {
   .container {
     padding: 10px 25px 25px;
   }
 }
+
 h1 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 50px;
 }
+
 @media (max-width: 412px) {
   h1 {
-    font-size:28px;
+    font-size: 28px;
   }
 }
+
 h2 {
   color: #ffffff;
 }
@@ -78,6 +84,7 @@ label small {
 }
 
 /* form starting stylings ------------------------------- */
+
 .group {
   position: relative;
   margin-bottom: 45px;
@@ -97,6 +104,7 @@ label small {
     width: 75%;
   }
 }
+
 @media (max-width: 475px) {
   .group_half {
     position: relative;
@@ -104,6 +112,7 @@ label small {
     width: 85%;
   }
 }
+
 @media (max-width: 412px) {
   .group_half {
     position: relative;
@@ -111,6 +120,7 @@ label small {
     width: 85%;
   }
 }
+
 .group_radio {
   position: relative;
   margin-bottom: 45px;
@@ -138,6 +148,7 @@ label small {
 }
 
 /* INPUT FORM TEXT */
+
 input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -209,6 +220,7 @@ input:focus {
 }
 
 /* LABEL ======================================= */
+
 .form-select-title {
   color: #999;
   padding-bottom: 5px;
@@ -344,6 +356,7 @@ input:focus {
   opacity: 0.5;
   transition: all 0.5s ease-in-out;
 }
+
 .group_radio label:hover, .group_radio label:focus, .group_radio label:active {
   border: 1px solid rgba(250, 250, 250, 0.5);
 }
@@ -359,6 +372,7 @@ input:focus {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 }
+
 .group_formula label:hover, .group_formula label:focus, .group_formula label:active {
   border: 1px solid rgba(250, 250, 250, 0.5);
 }
@@ -375,6 +389,7 @@ input:focus {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 }
+
 .group_formula_3 label:hover, .group_formula_3 label:focus, .group_formula_3 label:active {
   border: 1px solid rgba(250, 250, 250, 0.5);
 }
@@ -399,6 +414,7 @@ label.form-select-calories {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 }
+
 label.form-select-calories:hover, label.form-select-calories:focus, label.form-select-calories:active {
   border: 1px solid rgba(250, 250, 250, 0.5);
 }
@@ -409,49 +425,45 @@ label.form-select-calories:hover, label.form-select-calories:focus, label.form-s
 }
 
 /* LABEL - active state */
-input:focus ~ label,
-input:valid ~ label {
+
+input:focus~label, input:valid~label {
   top: -20px;
   font-size: 14px;
   color: #637a96;
 }
 
-.group_radio input:focus ~ label,
-.group_radio input:valid ~ label {
+.group_radio input:focus~label, .group_radio input:valid~label {
   top: -20px;
   font-size: 16px;
   color: #ffffff;
 }
 
-.group_formula input:focus ~ label,
-.group_formula input:valid ~ label {
+.group_formula input:focus~label, .group_formula input:valid~label {
   top: -20px;
   font-size: 16px;
   color: #ffffff;
 }
 
-.group_formula_3 input:focus ~ label,
-.group_formula_3 input:valid ~ label {
+.group_formula_3 input:focus~label, .group_formula_3 input:valid~label {
   top: -20px;
   font-size: 16px;
   color: #ffffff;
 }
 
-.group_formula_3perc input:focus ~ label,
-.group_formula_3perc input:valid ~ label {
+.group_formula_3perc input:focus~label, .group_formula_3perc input:valid~label {
   top: -20px;
   font-size: 16px;
   color: #ffffff;
 }
 
-.form-select-calories input:focus ~ label,
-.form-select-calories input:valid ~ label {
+.form-select-calories input:focus~label, .form-select-calories input:valid~label {
   top: 0px;
   font-size: 14px;
   color: #ffffff;
 }
 
-/* BOTTOM BARS ================================= */
+/* ================================  BOTTOM BARS  ================================= */
+
 .bar {
   position: relative;
   display: block;
@@ -464,8 +476,7 @@ input:valid ~ label {
   width: 100px;
 }
 
-.bar:before,
-.bar:after {
+.bar:before, .bar:after {
   content: "";
   height: 2px;
   width: 0;
@@ -477,8 +488,7 @@ input:valid ~ label {
   -webkit-transition: 0.2s ease all;
 }
 
-.bar_half:before,
-.bar_half:after {
+.bar_half:before, .bar_half:after {
   content: "";
   height: 2px;
   width: 0;
@@ -507,17 +517,17 @@ input:valid ~ label {
 }
 
 /* active state */
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
+
+input:focus~.bar:before, input:focus~.bar:after {
   width: 50%;
 }
 
-input:focus ~ .bar_half:before,
-input:focus ~ .bar_half:after {
+input:focus~.bar_half:before, input:focus~.bar_half:after {
   width: 50%;
 }
 
-/* HIGHLIGHTER ================================== */
+/* =================================  HIGHLIGHTER  ================================== */
+
 .highlight {
   position: absolute;
   height: 60%;
@@ -539,19 +549,21 @@ input:focus ~ .bar_half:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
+
+input:focus~.highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
 
-input:focus ~ .highlight_half {
+input:focus~.highlight_half {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
 
-/* ANIMATIONS ================ */
+/* ====================================  ANIMATIONS  ================================= */
+
 @-webkit-keyframes inputHighlighter {
   from {
     background: #637a96;
@@ -561,6 +573,7 @@ input:focus ~ .highlight_half {
     background: transparent;
   }
 }
+
 @-moz-keyframes inputHighlighter {
   from {
     background: #637a96;
@@ -570,6 +583,7 @@ input:focus ~ .highlight_half {
     background: transparent;
   }
 }
+
 @keyframes inputHighlighter {
   from {
     background: #637a96;
@@ -579,7 +593,9 @@ input:focus ~ .highlight_half {
     background: transparent;
   }
 }
+
 /**************** RADIO BUTTON Form Styles ******************/
+
 .form {
   max-width: 610px;
   margin: 60px auto;
@@ -634,29 +650,29 @@ input:focus ~ .highlight_half {
   .form__answer_3 {
     height: 100px;
   }
-
   .form__answer {
     width: 30%;
   }
 }
+
 @media (max-width: 475px) {
   .form__answer_3 {
     height: 125px;
   }
-
   .form__answer {
     width: 40%;
   }
 }
+
 @media (max-width: 412px) {
   .form__answer_3 {
     height: 125px;
   }
-
   .form__answer {
     width: 48%;
   }
 }
+
 .form__half {
   display: inline-block;
   box-sizing: border-box;
@@ -681,6 +697,7 @@ input:focus ~ .highlight_half {
   margin: 40px 0;
   transition: all 0.25s ease-in-out;
 }
+
 .form__button:hover, .form__button:focus {
   background-color: #00824a;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
@@ -688,37 +705,32 @@ input:focus ~ .highlight_half {
 }
 
 /* Input style */
+
 input[type=radio] {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-input[type=radio]:active ~ label {
+input[type=radio]:active~label {
   opacity: 1;
 }
 
-input[type=radio]:checked ~ label {
+input[type=radio]:checked~label {
   opacity: 1;
   border: 1px solid #fafafa;
 }
 
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 /* Change autocomplete styles in WebKit */
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
   /*border: 1px solid green;*/
   -webkit-text-fill-color: #fff;
   -webkit-box-shadow: 0 0 0px 1000px #333 inset;
@@ -726,20 +738,20 @@ select:-webkit-autofill:focus {
 }
 
 /* Firefox */
+
 input[type=number] {
   -moz-appearance: textfield;
 }
 
 /* Footer Styles */
+
 footer {
   background-color: #003459;
   position: relative;
   padding: 20px;
 }
-footer h2,
-footer h3,
-footer p,
-footer ul {
+
+footer h2, footer h3, footer p, footer ul {
   max-width: 610px;
   margin: 20px auto;
 }
@@ -758,14 +770,16 @@ footer ul {
   line-height: 1.5em;
   font-size: 22px;
 }
+
 .footer__parragraph a, .footer__list a {
   color: #00a7e1;
 }
 
-.footer2 p{
+.footer2 p {
   max-width: 610px;
   margin: 20px auto;
 }
+
 .footer2 {
   text-align: center;
   color: #ffffff;
@@ -777,79 +791,196 @@ footer ul {
   color: #699B73;
 }
 
-
 @media (max-width: 550px) {
-    .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5  {
+  .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5 {
     width: 65%;
   }
-
   .form-select-time {
     width: 16%;
   }
-
   .form-select-calories {
     width: 16%;
   }
-
   .form-select-title .col1 {
     width: 65%;
   }
-
   .form-select-title .col2 {
     width: 16%;
   }
-
   .form-select-title .col3 {
     width: 16%;
   }
-
   .group_formula_3 label {
     width: 31%;
   }
-
   .group_formula_3perc label {
     width: 31%;
   }
-
   .form__answer_3 {
     width: 31%;
   }
 }
 
-@media (max-width: 400px) {
-  .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5  {
-  width: 64.5%;
+@media (max-width: 412px) {
+  .form-select-activities1, .form-select-activities2, .form-select-activities3, .form-select-activities4, .form-select-activities5 {
+    width: 64.5%;
+  }
+  .form-select-time {
+    width: 16%;
+  }
+  .form-select-calories {
+    width: 16%;
+  }
+  .form-select-title .col1 {
+    width: 65%;
+  }
+  .form-select-title .col2 {
+    width: 16%;
+  }
+  .form-select-title .col3 {
+    width: 16%;
+  }
+  .group_formula_3 label {
+    width: 30.7%;
+  }
+  .group_formula_3perc label {
+    width: 30.7%;
+  }
+  .form__answer_3 {
+    width: 30.7%;
+  }
 }
 
-.form-select-time {
-  width: 16%;
+/*==================================== CUSTOM SCROLLBARS =================================================*/
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.form-select-calories {
-  width: 16%;
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #333;
 }
 
-.form-select-title .col1 {
-  width: 65%;
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #444;
 }
 
-.form-select-title .col2 {
-  width: 16%;
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-.form-select-title .col3 {
-  width: 16%;
+/*=====================  CUSTOM SELECT2 SETTINGS - change colors and radius  ===============================**/
+
+.select2-container {
+  color: #999;
+  padding: 4px 0px 5px 0px;
+  font-size: 16px;
+  background: #333333;
 }
 
-.group_formula_3 label {
-  width: 30.7%;
+@media (max-width: 550px) {
+  .select2-container {
+    width: 65% !important;
+  }
 }
 
-.group_formula_3perc label {
-  width: 30.7%;
+@media (max-width: 412px) {
+  .select2-container {
+    width: 64.5% !important;
+  }
 }
 
-.form__answer_3 {
-  width: 30.7%;
+.select2-container .select2-selection--single {
+  height: 30px;
 }
+
+.select2-dropdown {
+  background-color: #333333;
+  border: 1px solid #767676;
+  border-radius: 0px;
+}
+
+.select2-container--default .select2-selection--single {
+  background-color: #333333;
+  border: 1px solid #767676;
+  border-radius: 0px
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #999;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 30px;
+  top: 4px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border-radius: 0px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  border-radius: 0px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+  max-height: 350px;
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: #222
+}
+
+.select2-container--classic .select2-selection--single {
+  border-radius: 0px;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.select2-container--classic .select2-selection--multiple {
+  border-radius: 0px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice {
+  border-radius: 0px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px
+}
+
+.select2-container--classic .select2-results>.select2-results__options {
+  max-height: 350px;
 }

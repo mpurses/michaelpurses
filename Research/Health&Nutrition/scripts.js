@@ -31,7 +31,7 @@ var $Fatperc = $("#Fatperc");
 var $Carbsperc = $("#Carbsperc");
 var $Proteinperc = $("#Proteinperc");
 
-
+// SELECT2 JS
 $(document).ready(function () {
 	//Get the format/search function ready, not data
 	$(".form-select-activities1").select2();
@@ -47,17 +47,6 @@ $(document).ready(function () {
 });
 
 $(function () {
-
-	//$(document).ready(function () {
-	//	$(document.body).on('click', '#reset', function () {
-	//		$('#activities1').val('0').change();
-	//		$('#activities2').val('0').change();
-	//		$('#activities3').val('0').change();
-	//		$('#activities4').val('0').change();
-	//		$('#activities5').val('0').change();
-	//	});
-	//});
-
 	function insertMETsInList1(MET) {
 		var list1 = $("select#activities1");
 		var newOption = $("<option></option>")
@@ -141,7 +130,7 @@ $(function () {
 
 });
 
-
+// ===================== FORMULAS  =========================
 // SEX
 function sexRadio(value) {
 	$Sex = value;
@@ -274,13 +263,9 @@ function changeTotalCalories() {
 		$Carbsperc.val((((Carbsg * 4) / TotalCalories) * 100).toFixed(0) + "%");
 		$Proteinperc.val((((Proteing * 4) / TotalCalories) * 100).toFixed(0) + "%");
 	}
-
-
-
-
-
 }
 
+// Update on changes
 $Age.on("input", changeBMR);
 $H_ft.on("input", changeBMR);
 $H_in.on("input", changeBMR);
@@ -296,4 +281,3 @@ $time2.on("change", changeTDEE);
 $time3.on("change", changeTDEE);
 $time4.on("change", changeTDEE);
 $time5.on("change", changeTDEE);
-
