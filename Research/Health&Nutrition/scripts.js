@@ -187,7 +187,9 @@ function changeBMR() {
 	if ($BMR.val() < 900) {
 		$BMR.val(0);
 	}
-	changeTDEE();
+	if (lbs != 0) {
+		changeTDEE();
+	}
 }
 
 function changeTDEE() {
