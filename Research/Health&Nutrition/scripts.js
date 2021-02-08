@@ -218,6 +218,12 @@ function changeTDEE() {
 	var Cal5 = parseInt($Cal5.val());
 	$CalTotal.val((Cal1 + Cal2 + Cal3 + Cal4 + Cal5).toFixed(0));
 	var CalTotal = parseInt($CalTotal.val());
+	//	1.15:	None (little to no physical activity)
+	//Instead of using these values below, I factor in data from your exact exercises selected...
+	//  1.3:	A little (one to three hours of exercise or sports per week)
+	//  1.5:	A moderate amount (four to six hours of exercise or sports per week)
+	//  1.7:	A lot (seven to nine hours of exercise or sports per week)
+	//  1.9:	A TON (ten or more hours of exercise or sports per week)
 	$TDEE.val((BMR * 1.15 + CalTotal).toFixed(0));
 	changeTotalCalories();
 }
