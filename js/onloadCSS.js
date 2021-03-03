@@ -16,7 +16,7 @@ function onloadCSS( ss, callback ) {
 		ss.attachEvent( "onload", newcb );
 	}
 
-	// This code is for browsers that don’t support onload
+	// This code is for browsers that don't support onload
 	// No support for onload (it'll bind but never fire):
 	//	* Android 4.3 (Samsung Galaxy S4, Browserstack)
 	//	* Android 4.2 Browser (Samsung Galaxy SIII Mini GT-I8200L)
