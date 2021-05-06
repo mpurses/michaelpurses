@@ -276,6 +276,11 @@
 	margin-bottom: .25rem
 }
 
+.bd-content>ul li>ul, .bd-content>ol li>ul {
+	margin-top: -.5rem;
+	margin-bottom: 1rem
+}
+
 .bd-content>.table {
 	max-width: 100%;
 	margin-bottom: 1.5rem;
@@ -759,6 +764,19 @@
 .bd-example-modal .modal {
 	position: static;
 	display: block
+}
+
+.bd-example-offcanvas {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0
+}
+
+.bd-example-offcanvas .offcanvas {
+	position: static;
+	display: block;
+	height: 200px;
+	visibility: visible;
+	transform: translate(0)
 }
 
 .tooltip-demo a {
